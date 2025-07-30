@@ -89,7 +89,7 @@ pip install -r requirements.txt
 
 # Step 2: Start the bot
 python bot.py
-
+```
 ---
 
 ## Disclaimer

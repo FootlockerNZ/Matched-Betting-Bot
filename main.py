@@ -15,7 +15,7 @@ log = logger().log
 init()
 
 
-ctypes.windll.kernel32.SetConsoleTitleW("Unity Utility Bot")
+ctypes.windll.kernel32.SetConsoleTitleW("Matched Betting Utility Bot")
 
 bookmakers = ['sportsbet', 'tab', 'tabnz', 'bet365', 'betdeluxe', 'betright', 'betr', 'bluebet', 'crossbet', 'elitebet', 'palmerbet', 'picklebet', 'ladbrokes', 'neds', 'pointsbet', 'realbookie', 'tab touch', 'topsport', 'unibet']
 
@@ -707,7 +707,6 @@ async def on_ready():
 
 
 def load_config(path='config.json'):
-    """Load and return JSON config as a dict."""
     with open(path, 'r') as f:
         return json.load(f)
 

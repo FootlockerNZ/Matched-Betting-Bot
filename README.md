@@ -78,7 +78,7 @@ Create a `config.json` file with the following structure:
   "currencyAPI": "your_currency_api_key",
   "discordBotToken": "your_discord_bot_token"
 }
-
+```
 ---
 
 ## Running the Bot

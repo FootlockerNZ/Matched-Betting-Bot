@@ -88,7 +88,7 @@ Create a `config.json` file with the following structure:
 pip install -r requirements.txt
 
 # Step 2: Start the bot
-python bot.py
+python main.py
 ```
 ---
 

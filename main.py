@@ -540,28 +540,6 @@ async def calculate_sr(interaction: discord.Interaction, stake: float, back: flo
         await interaction.response.send_message(f"{interaction.user.name} you should lay **AUD${str(layAmount)}** at odds of **{str(lay)}** and your liability will be **AUD${str(liability)}** / **NZD${str(liabilityNZD)}**.\n\nYou should stake your **{currency}${str(originalStake)}** bet at odds of **{str(back)}** to return **{currency}${str(betReturn)}**.\n\nYour net return will be **AUD${str(netReturn)}** / **NZD${str(netReturnNZD)}** with a rating of **{str(rating)}%**.", ephemeral=True)
     else:
         await interaction.response.send_message(f"{interaction.user.name} you should lay **AUD${str(layAmount)}** at odds of **{str(lay)}** and your liability will be **AUD${str(liability)}**.\n\nYou should stake your **{currency}${str(originalStake)}** bet at odds of **{str(back)}** to return **{currency}${str(betReturn)}**.\n\nYour net return will be **AUD${str(netReturn)}** with a rating of **{str(rating)}%**.", ephemeral=True)
-
-
-
-def calculate_sr_max_liquidity(liquidity, back, lay, slug, currency='AUD', commission=0.06):
-
-    try:
-        log(slug+'Calculating maximum stake for liquidity: AUD$' + str(liquidity))
-        
-        max_stake_aud = liquidity * (lay - commission) / back
-        
-        if currency == 'NZD':
-            max_stake = max_stake_aud * exchangeRateAUDNZD
-        else:
-            max_stake = max_stake_aud
-        
-        log(slug+'Maximum stake calculated: ' + currency + '$' + str(round(max_stake, 2)))
-        return max_stake
-        
-    except Exception as e:
-        log(slug+'Error calculating maximum stake. Error: ' + str(e))
-        log(slug+'Traceback: {}'.format(traceback.format_exc()))
-        return 0
     
 
 
